@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ứng dụng chuyển đổi tiền tệ</title>
+    </head>
+    <body>
+        Amount<br/>
+        <input id="amount" placeholder="10000 VNĐ or 1 USD">&nbsp;1 USD = 25,000 VNĐ<br/><br/>
+        From Currency<br/>
+        <select id="fromcurrency">
+            <option value="vnd">Việt Nam đồng</option>
+            <option value="usd">Đô la Mỹ</option>
+        </select><br/><br/>
+        To Currency<br/>
+        <select id="tocurrency">
+            <option value="usd">Đô la Mỹ</option>
+            <option value="vnd">Việt Nam đồng</option>
+        </select><br/><br/>
+        <input type="button" id="convert" value="Convert" onclick="convert();"><br/>
+        Result<br/>
+        <input id="kq">
+        <script>
+        function convert(){
+            let amount = parseInt(document.getElementById("amount").value);
+            let t1 = document.getElementById("fromcurrency").value;
+            let t2 = document.getElementById("tocurrency").value;
+            if (t1 === "vnd" && t2 === "usd"){
+                result = amount / 25000;
+            }
+            else if (t1 === "usd" && t2 === "vnd"){
+                result = amount * 25000;
+            }
+            else if (t1 === t2){
+                result = amount;
+            }
+            document.getElementById("kq").value = result;
+        }
+        </script>
+    </body>
+</html>

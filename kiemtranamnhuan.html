@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Kiểm tra năm nhuận</title>
+    </head>
+    <body>
+        <script>
+            var nam = prompt("Nhập vào năm muốn kiểm tra");
+            var namnhuan = false;
+            var namchiahetcho4 = nam % 4 == 0;
+            if (namchiahetcho4) {
+                var namchiahetcho100 = nam % 100 == 0;
+                if (namchiahetcho100) {
+                    var namchiahetcho400 = nam % 400 == 0;
+                    if (namchiahetcho400) {
+                        namnhuan = true;
+                    }    
+                }
+                else {
+                    namnhuan = true;
+                }
+            }
+            (namnhuan) ? alert(nam + " là năm nhuận!"): alert(nam + " không phải là năm nhuận!");
+        </script>
+    </body>
+</html>

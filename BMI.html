@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BMI</title>
+    </head>
+    <body>
+        <script>
+            let weight = prompt("Enter weight");
+            let height = prompt("Enter height");
+            let bmi = weight/(height**2);
+            (bmi >= 30.0) ?
+            alert("Obese") :
+            (bmi >= 25.0) ?
+            alert("Overweight") :
+            (bmi >= 18.5) ?
+            alert("Normal") :
+            alert("Underweight");
+            console.log(weight,height,bmi);
+        </script>
+    </body>
+</html>

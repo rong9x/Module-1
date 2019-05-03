@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+    </head>
+    <body>
+        Account: <input id="username"><br>
+        Password: <input id="pass" type="password"><br>
+        <input id="btn" type="button" value="Login" onclick="login()">
+        <script>
+            function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("pass").value;
+            if (username === "admin") {
+                if (password === "TheMaster") {
+                    alert("Welcome");
+                }
+                else if (password === "") {
+                    alert("Canceled");
+                }
+                else {
+                    alert("Wrong password");
+                }
+            }
+            else if (username === "") {
+                alert("Canceld");
+            }
+            else alert("I don't know you");
+            }
+        </script>
+    </body>
+</html>

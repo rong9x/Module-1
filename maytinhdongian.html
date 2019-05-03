@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Máy tính</title>
+    </head>
+    <body>
+    <table border="1px;">
+        <tr>
+            <td colspan="3"><input type="text" id="demo"></td>
+            <td><input type="button" value="<-" onclick="demo.value=demo.value.substr(0,demo.value.length-1)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="demo.value+=this.value"></td>
+            <td><input type="button" value="2" onclick="demo.value+=this.value"></td>
+            <td><input type="button" value="3" onclick="demo.value+=this.value"></td>
+            <td><input type="button" value="+" onclick="demo.value+=this.value"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="demo.value+=this.value"></td>
+            <td><input type="button" value="5" onclick="demo.value+=this.value"></td>
+            <td><input type="button" value="6" onclick="demo.value+=this.value"></td>
+            <td><input type="button" value="-" onclick="demo.value+=this.value"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="demo.value+=this.value"></td>
+            <td><input type="button" value="8" onclick="demo.value+=this.value"></td>
+            <td><input type="button" value="9" onclick="demo.value+=this.value"></td>
+            <td><input type="button" value="*" onclick="demo.value+=this.value"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" onclick="demo.value=''"></td>
+            <td><input type="button" value="0" onclick="demo.value+=this.value"></td>
+            <td><input type="button" value="=" onclick="demo.value=eval(demo.value)"></td>
+            <td><input type="button" value="/" onclick="demo.value+=this.value"></td>
+        </tr>   
+    </table>
+    </body>
+</html>

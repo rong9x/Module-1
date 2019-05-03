@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DoYouLoveMe</title>
+    </head>
+    <body>
+        <h1>Do you love me?</h1>
+        <input type="button" id="y" value="Yes" onclick="alert('<3')"/>
+        <input type="button" id="n" value="No" style="position:absolute; left:120px; top:150px;" onmouseover="doRandom()"/>
+        <script>
+            function doRandom() {
+                let w = Math.random() * window.innerWidth;
+                let h = Math.random() * window.innerHeight;
+                let element = document.getElementById("n");
+                element.style.top = h + 'px';
+                element.style.left = w + 'px';
+            }
+        </script>
+    </body>
+</html>

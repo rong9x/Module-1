@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Switchcase2</title>
+    </head>
+    <body>
+        <input id="myInput" type="text">&nbsp;<input type="button" value="Tinh ngay" onclick="countday()"><br>
+        <div id="demo"></div>
+        <script>
+            function countday() {
+            var a = parseInt(document.getElementById("myInput").value);
+            switch (a) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById("demo").innerHTML = "Tháng " + a + " có 31 ngày";
+                    break;
+                case 2:
+                    document.getElementById("demo").innerHTML = "Tháng " + a + " có 28 hoặc 29 ngày";
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.getElementById("demo").innerHTML = "Tháng " + a + " có 30 ngày";
+                    break;
+                default:
+                    document.getElementById("demo").innerHTML = "Nhập sai tháng";
+                    break;
+            }
+            }
+        </script>
+    </body>
+</html>

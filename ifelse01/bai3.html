@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 3</title>
+    </head>
+    <body>
+        <script>
+            let a = parseInt(prompt('Nhập 1 số!'));
+            try {
+                if (isNaN(a)) throw new Error('Nhập sai số, mời nhập lại!');
+                (a === 0) ? alert(a + ' = 0') :
+                (a > 0) ? alert(a + ' > 0') : alert(a+ ' < 0');
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

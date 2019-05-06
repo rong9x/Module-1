@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 5</title>
+    </head>
+    <body>
+        <script>
+            //Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+            let diemkiemtra = +prompt('Nhập điểm kiểm tra (hệ số 1)');
+            let diemgiuaky = +prompt('Nhập điểm thi giữa kỳ (hệ số 2)');
+            let diemcuoiky = +prompt('Nhập điểm thi cuối kỳ (hệ số 3)');
+            
+            function tinhDiem(diemkiemtra,diemgiuaky,diemcuoiky) {
+                let diemtong = (diemkiemtra + diemgiuaky*2 + diemcuoiky*3) / 6;
+                let xeploai;
+                if (diemtong < 0 || diemtong > 10) {
+                    alert('Nhập sai điểm');
+                } else if (diemtong > 9) {
+                    xeploai = "Giỏi";
+                    } else if (diemtong > 7) {
+                        xeploai = "Khá";
+                        } else if (diemtong > 4) {
+                            xeploai = "Trung bình";
+                        } else xeploai = "Yếu";
+                return xeploai;
+            }
+            try {
+                if (isNaN(diemkiemtra) || isNaN(diemgiuaky) || isNaN(diemcuoiky)) {
+                    throw new Error('Nhập sai điểm, mời nhập lại!');
+                } else alert(tinhDiem(diemkiemtra,diemgiuaky,diemcuoiky));
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

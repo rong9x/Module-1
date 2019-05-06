@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 4</title>
+    </head>
+    <body>
+        <script>
+            let a = parseInt(prompt('Nhập a!'));
+            let b = parseInt(prompt('Nhập b!'));
+            let c = parseInt(prompt('Nhập c!'));
+            function timMinMax(a, b, c) {
+                let max = a;
+                if (a === b) {
+                    if (a > c) {
+                        max = a;
+                    } else {
+                        max = c;
+                    }
+                }
+                if (a === c) {
+                    if (a > b) {
+                        max = a;
+                    } else {
+                        max = b;
+                    }
+                }
+                if (a < b) {
+                    if (b < c) {
+                        max = c;
+                    } else max = b;
+                }
+                if (a < c) {
+                    if (c < b) {
+                        max = b;
+                    } else max = c;
+                }
+                alert('Số lớn nhất là: ' + max);
+            }
+            try {
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    throw new Error('Nhập sai số, mời nhập lại!');
+                } else timMinMax(a,b,c);
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

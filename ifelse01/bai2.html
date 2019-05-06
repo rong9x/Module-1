@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 2</title>
+    </head>
+    <body>
+        <script>
+            let tuoi = parseInt(prompt('Nhập tuổi!'));
+            try {
+                if (isNaN(tuoi)) throw new Error('Nhập sai tuổi, mời nhập lại!');
+                (tuoi < 16) ? alert('Không đủ điều kiện vào lớp 10!') : alert('Chào mừng!');
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

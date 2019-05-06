@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 1</title>
+    </head>
+    <body>
+        <script>
+            let a = parseInt(prompt('Nhập số a'));
+            let b = parseInt(prompt('Nhập số b'));
+            function checkDulieu() {
+                this.checkKieu = function() {
+                    throw new Error('Ký tự bạn nhập không phải là số');
+                }
+                return this;
+            }
+            function phepChia(a, b) {
+                let mod = a % b;
+                if (b === 0) {
+                    alert('Không có phép chia cho số 0');
+                } else if (mod === 0) {
+                    alert(a + ' chia hết cho ' + b);
+                } else alert(a + ' không chia hết cho ' + b);
+            }
+            try {
+                if (isNaN(a) || isNaN(b)) {
+                    var checkLoi = new checkDulieu();
+                    checkLoi.checkKieu();
+                    //gọi hàm check kiểu dữ liệu
+                } else phepChia(a, b) ; // gọi hàm thực hiện phép chia
+            }
+            catch (e) {
+                alert(e.name + ': ' + e.message);
+                console.log(e.name + ' :' + e.message);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 1</title>
+    </head>
+    <body>
+        <script>
+            let fahrenheit = parseFloat(prompt('Enter the fahrenheit'));
+            function toCelsius(fahrenheit) {
+                return (5/9) * (fahrenheit-32);
+            }
+            try {
+                if (isNaN(fahrenheit)) {
+                    throw new Error('Enter again');
+                }
+                else
+                    alert(toCelsius(fahrenheit));
+            }
+            catch (e) {
+                alert(e.name + ' :' + e.message);
+                console.log(e);
+            }
+        </script>
+    </body>
+</html>

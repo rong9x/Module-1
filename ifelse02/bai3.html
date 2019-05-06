@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 3</title>
+    </head>
+    <body>
+        <script>
+            let a = parseFloat(prompt('Enter a'));
+            try {
+                if (isNaN(a)) {
+                    throw new Error('Enter again');
+                }
+                else
+                    alert('Area square is: ' + a**2);
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 5</title>
+    </head>
+    <body>
+        <script>
+            let a = parseFloat(prompt('Enter a'));
+            let b = parseFloat(prompt('Enter b'));
+            try {
+                if (isNaN(a) || isNaN(b)) {
+                    throw new Error('Enter again');
+                }
+                else
+                    alert('Square triangle area is: ' + (a*b)/2);
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

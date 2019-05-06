@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 10</title>
+    </head>
+    <body>
+        <script>
+        /* Viết chương trình tính giá điện. */
+            let amount = parseFloat(prompt('Enter amount'));
+            let unitPrice = 2200;
+            try {
+                if (isNaN(amount)) {
+                    throw new Error('Enter again');
+                }
+                else alert('The price is: ' + amount*unitPrice);
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

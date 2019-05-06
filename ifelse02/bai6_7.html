@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 7</title>
+    </head>
+    <body>
+        <script>
+            let a = parseFloat(prompt('Enter a'));
+            let b = parseFloat(prompt('Enter b'));
+            let c = parseFloat(prompt('Enter c'));
+            function solveEquation(a,b,c) {
+                let delta = (b**2) - (4*a*c);
+                let sqrtDelta = Math.sqrt(delta);
+                if (delta < 0) {
+                    alert('The equation has no solution');
+                } else if (delta === 0) {
+                    alert('Equation has double solution: ' + (-b)/2*a);
+                } else 
+                    alert('Equation has two solution: ' + (-b+sqrtDelta)/(2*a) + ' and ' + (-b-sqrtDelta)/(2*a));
+            }
+            try {
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    throw new Error('Enter again');
+                }
+                else
+                    alert(solveEquation(a,b,c));
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

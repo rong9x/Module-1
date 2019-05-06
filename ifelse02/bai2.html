@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 2</title>
+    </head>
+    <body>
+        <script>
+            let meter = parseFloat(prompt('Enter the meter'));
+            function toFeet(meter) {
+                return meter * 3.2808;
+            }
+            try {
+                if (isNaN(meter)) {
+                    throw new Error('Enter again');
+                }
+                else
+                    alert(toFeet(meter));
+            }
+            catch (e) {
+                alert(e.name + ' :' + e.message);
+                console.log(e);
+            }
+        </script>
+    </body>
+</html>

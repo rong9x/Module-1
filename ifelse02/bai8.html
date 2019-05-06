@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 8</title>
+    </head>
+    <body>
+        <script>
+            let age = parseInt(prompt('Enter age'));
+            try {
+                if (isNaN(age)) {
+                    throw new Error('Enter again');
+                }
+                else if (age < 120 && age >0) {
+                    alert(age + ' is an age of human');
+                } else 
+                    alert(age + ' is not an age of human');
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

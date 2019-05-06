@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 4</title>
+    </head>
+    <body>
+        <script>
+            let width = parseFloat(prompt('Enter width'));
+            let height = parseFloat(prompt('Enter height'));
+            try {
+                if (isNaN(width) || isNaN(height)) {
+                    throw new Error('Enter again');
+                }
+                else
+                    alert('Rectangular area is: ' + width*height);
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

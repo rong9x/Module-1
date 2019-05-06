@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 11</title>
+    </head>
+    <body>
+        <script>
+        /* Viết chương trình tính thuế thu nhập cá nhân. */
+            let salary = parseFloat(prompt('Enter salary'));
+            try {
+                if (isNaN(salary)) {
+                    throw new Error('Enter again');
+                }
+                else alert('The tax is: ' + salary*0.1);
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

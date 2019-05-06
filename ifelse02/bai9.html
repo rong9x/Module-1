@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bài 9</title>
+    </head>
+    <body>
+        <script>
+        /*     Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:
+
+        a,b,c > 0
+        a + b > c
+        b + c > a
+        a + c > b */
+            function check(a,b,c) {
+                if (a > 0 && b > 0 && c > 0) {
+                    if ((a+b>c) && (b+c>a) && (a+c>b)) {
+                        alert (a + ', ' + b + ', ' + c + ' are three sides of a triangle');
+                    } else
+                    alert (a + ', ' + b + ', ' + c + ' are not three sides of a triangle');
+                } else alert (a + ', ' + b + ', ' + c + ' are not three sides of a triangle');
+                console.log(a,b,c)
+            }
+            let a = parseFloat(prompt('Enter a'));
+            let b = parseFloat(prompt('Enter b'));
+            let c = parseFloat(prompt('Enter c'));
+            try {
+                if (isNaN(a) ||isNaN(b) || isNaN(c)) {
+                    throw new Error('Enter again');
+                }
+                else check(a,b,c);
+            }
+            catch (e) {
+                console.log(e.name+' :'+e.message);
+                alert(e.name+' :'+e.message);
+            }
+        </script>
+    </body>
+</html>

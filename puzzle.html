@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Puzzle</title>
+    </head>
+    <body>
+        <div>
+            <img src="puzzle/funny-cat1_part1x1.jpg"  alt="puzzle/funny-cat1_part1x1.jpg" id="image1" width="800px" height="150px" onclick="changeImage1()"/>
+            <img src="puzzle/monkey_part2x1.jpg" alt="puzzle/monkey_part2x1.jpg" id="image2" width="800px" height="150px" onclick="changeImage2()"/>
+            <img src="puzzle/panda_swap_part3x1.jpg" alt="puzzle/panda_swap_part3x1.jpg" id="image3" width="800px" height="150px" onclick="changeImage3()"/>
+            <img src="puzzle/funny-cat1_part4x1.jpg" alt="puzzle/funny-cat1_part4x1.jpg" id="image4" width="800px" height="150px" onclick="changeImage4()"/>
+            <img src="puzzle/monkey_part5x1.jpg" alt="puzzle/monkey_part5x1.jpg" id="image5" width="800px" height="150px" onclick="changeImage5()"/>
+        </div>
+        <script>
+            const panda1 = 'puzzle/panda_swap_part1x1.jpg';
+            const cat1 = 'puzzle/funny-cat1_part1x1.jpg';
+            const monkey1 = 'puzzle/monkey_part1x1.jpg';
+            const panda2 = 'puzzle/panda_swap_part2x1.jpg';
+            const cat2 = 'puzzle/funny-cat1_part2x1.jpg';
+            const monkey2 = 'puzzle/monkey_part2x1.jpg';
+            const panda3 = 'puzzle/panda_swap_part3x1.jpg';
+            const cat3 = 'puzzle/funny-cat1_part3x1.jpg';
+            const monkey3 = 'puzzle/monkey_part3x1.jpg';
+            const panda4 = 'puzzle/panda_swap_part4x1.jpg';
+            const cat4 = 'puzzle/funny-cat1_part4x1.jpg';
+            const monkey4 = 'puzzle/monkey_part4x1.jpg';
+            const panda5 = 'puzzle/panda_swap_part5x1.jpg';
+            const cat5 = 'puzzle/funny-cat1_part5x1.jpg';
+            const monkey5 = 'puzzle/monkey_part5x1.jpg';           
+            function changeImage1() {
+                let img1 = document.getElementById('image1');
+                if (img1.alt === panda1) {
+                    img1.src = cat1;
+                    img1.alt = cat1;
+                    img1.style.borderStyle = "solid";
+                    img1.style.borderColor = "coral";                    
+                } else if (img1.alt === cat1) {
+                    img1.src = monkey1;
+                    img1.alt = monkey1;
+                    img1.style.borderStyle = "solid";
+                    img1.style.borderColor = "blue";
+                } else {
+                    img1.src = panda1;
+                    img1.alt = panda1;
+                    img1.style.borderStyle = "solid";
+                    img1.style.borderColor = "yellow";
+                }
+            }
+            function changeImage2() {
+                let img2 = document.getElementById('image2');
+                if (img2.alt === panda2) {
+                    img2.src = cat2;
+                    img2.alt = cat2;
+                    img2.style.borderStyle = "solid";
+                    img2.style.borderColor = "coral";
+                } else if (img2.alt === cat2) {
+                    img2.src = monkey2;
+                    img2.alt = monkey2;
+                    img2.style.borderStyle = "solid";
+                    img2.style.borderColor = "blue";
+                } else {
+                    img2.src = panda2;
+                    img2.alt = panda2;
+                    img2.style.borderStyle = "solid";
+                    img2.style.borderColor = "yellow";
+                }
+            }
+            function changeImage3() {
+                let img3 = document.getElementById('image3');
+                if (img3.alt === panda3) {
+                    img3.src = cat3;
+                    img3.alt = cat3;
+                    img3.style.borderStyle = "solid";
+                    img3.style.borderColor = "coral";
+                } else if (img3.alt === cat3) {
+                    img3.src = monkey3;
+                    img3.alt = monkey3;
+                    img3.style.borderStyle = "solid";
+                    img3.style.borderColor = "blue";
+                } else {
+                    img3.src = panda3;
+                    img3.alt = panda3;
+                    img3.style.borderStyle = "solid";
+                    img3.style.borderColor = "yellow";
+                }
+            }
+            function changeImage4() {
+                let img4 = document.getElementById('image4');
+                if (img4.alt === panda4) {
+                    img4.src = cat4;
+                    img4.alt = cat4;
+                    img4.style.borderStyle = "solid";
+                    img4.style.borderColor = "coral";
+                } else if (img4.alt === cat4) {
+                    img4.src = monkey4;
+                    img4.alt = monkey4;
+                    img4.style.borderStyle = "solid";
+                    img4.style.borderColor = "blue";
+                } else {
+                    img4.src = panda4;
+                    img4.alt = panda4;
+                    img4.style.borderStyle = "solid";
+                    img4.style.borderColor = "yellow";
+                }
+            }
+            function changeImage5() {
+                let img5 = document.getElementById('image5');
+                if (img5.alt === panda5) {
+                    img5.src = cat5;
+                    img5.alt = cat5;
+                    img5.style.borderStyle = "solid";
+                    img5.style.borderColor = "coral";
+                } else if (img5.alt === cat5) {
+                    img5.src = monkey5;
+                    img5.alt = monkey5;
+                    img5.style.borderStyle = "solid";
+                    img5.style.borderColor = "blue";
+                } else {
+                    img5.src = panda5;
+                    img5.alt = panda5;
+                    img5.style.borderStyle = "solid";
+                    img5.style.borderColor = "yellow";
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Prime</title>
+    </head>
+    <body>           
+        <script>
+            /* let number = parseInt(prompt('Enter a number to check'));
+            function isPrime(number) {
+                let flag = true;
+                if (number < 2) {
+                    flag = false;
+                }
+                else if (number === 2) {
+                    flag = true;
+                }
+                else if (number % 2 === 0) {
+                    flag = false;
+                }
+                else {
+                    for (var count = 3; count < (number-1); count+=2) {
+                        if (number % count === 0) {
+                            flag = false;
+                            break;
+                        }
+                    }
+                }
+                if (flag === true) {
+                    document.write(number + ' is prime');
+                }
+                else {
+                    document.write(number + ' is not prime');
+                }
+            }
+            isPrime(number); */
+            let number = parseInt(prompt('Enter a number to check'));
+            let n = 2;
+            while (n < number) {
+                let count = 0;
+                for (let i = 1; i < n; i++) { 
+                    if (n % i === 0) {
+                        count++;
+                    }
+                }
+                if (count < 2) {
+                    document.write(n + '<br>');
+                }
+                n = n + 1;
+            }
+        </script>
+    </body>
+</html>

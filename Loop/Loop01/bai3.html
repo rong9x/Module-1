@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+    /* var fibonacci_series = function (n) {
+        if (n === 1) {
+            return [0, 1];
+        }
+        else {
+            var s = fibonacci_series(n - 1);
+            s.push(s[s.length - 1] + s[s.length - 2]);
+            return s;
+        }
+        };
+        document.write(fibonacci_series(19)); */
+    let number = 20;
+    let a = 1, b = 0, tam = 0;
+    let i;        
+    for (i = 1; i <= number; i++) {
+        document.write(tam + ", ");
+        tam = a + b;
+        a = b;
+        b = tam;
+    }
+</script>
+</html>

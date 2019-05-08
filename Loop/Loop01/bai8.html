@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+
+<body>
+    <input id="btn" type="button" value="Chơi" onclick="doanSo()">
+</body>
+
+<script>
+    function doanSo() {
+        let khoang1 = parseInt(prompt('Bạn muốn đoán trong khoảng từ: '));
+        let khoang2 = parseInt(prompt('đến: ?'));
+        let soNgauNhien = Math.floor((Math.random() * khoang2) + khoang1);
+        let dem = 1;
+        do {
+            let giaTri = parseInt(prompt('Nhập số muốn đoán'));
+            if (giaTri === soNgauNhien) {
+                alert('Chúc mừng bạn đã đoán đúng, ' + giaTri + ' là đáp án');
+                break;
+            }
+            else if (giaTri < soNgauNhien) {
+                alert('Số bạn đoán ' + giaTri + ' nhỏ hơn đáp án');
+                dem++;
+            }
+            else {
+                alert('Số bạn đoán ' + giaTri + ' lớn hơn đáp án');
+                dem++;
+            }
+        } while (dem <= 3);
+    }
+</script>
+
+</html>

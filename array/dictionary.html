@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dictionary</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Dictionary: English - Vietnamese</legend>
+        <input type="text" id="txt" placeholder="Enter a word..." size="30" />&nbsp;&nbsp;
+        <input type="button" size="10" value="Search" onclick="doTranslate()" /><br />
+        <p id="result"></p>
+    </fieldset>
+</body>
+
+<script>
+    function doTranslate() {
+        let txt = document.getElementById('txt').value;
+        let arrayE = ["banana", "orange", "apple", "mango"];
+        let arrayV = ["chuối", "cam", "táo", "xoài"];
+        for (let i = 0; i < arrayE.length; i++) {
+            if (arrayE[i] === txt.toString()) {
+                document.getElementById('result').innerHTML = arrayV[i];
+                break;
+            }
+            else {
+                document.getElementById('result').innerHTML = "Word not found";
+            }
+        }
+    }
+</script>
+
+</html>

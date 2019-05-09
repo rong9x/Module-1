@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Change Case</title>
+</head>
+
+<body>
+    <p id="demo" type="text"></p>
+</body>
+
+<script>
+    //The Quick Brown Fox 
+    let str = prompt('Enter a string');
+    const UPPER ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const LOWER ="abcdefghijklmnopqrstuvwxyz";
+    let tem = [];
+    for (let i = 0; i < str.length; i++) {
+        if (UPPER.includes(str[i])) {
+            tem.push(str[i].toLowerCase());
+        }
+        else if (LOWER.includes(str[i])) {
+            tem.push(str[i].toUpperCase());
+        }
+        else {
+            tem.push(str[i]);
+        }
+    }
+    document.getElementById('demo').innerHTML = tem.join('');
+</script>
+
+</html>

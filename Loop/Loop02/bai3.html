@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let count = 5;
+    let a = "";
+    //hình 1
+    for (let i = 1; i <= count; i++) {
+        for (let j = 1; j <= i; j++) {
+            document.write('*');
+        }
+        document.write('<br>');
+    }
+    document.write('<br>');
+    //hình 2
+    for (let i = count; i >= 0; i--) {
+        a = a + '<br>';
+        for (let j = 0; j < count; j++) {
+            a = a + '*';
+        }
+        count--;
+    }
+    document.write(a + '<br>');
+    document.write('<br>');
+</script>
+
+</html>

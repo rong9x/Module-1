@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bai 05</title>
+</head>
+
+<body>
+    <p id="demo1"></p>
+</body>
+
+<script>
+    //Create array by user
+    let num;
+    let array = [];
+    let count = 0;
+    for (let i = 0; i < 10; i++) {
+        num = parseInt(prompt('Enter number ' + (i + 1)));
+        array.push(num);
+        if (array[i] < 0) {
+            count++; //count how many number less than 0
+        }
+    }
+    document.getElementById('demo1').innerHTML = array.join(' , ');
+    document.write('Array has ' + count + ' number less than 0');
+</script>
+
+</html>

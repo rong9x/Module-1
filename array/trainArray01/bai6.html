@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bai 06</title>
+</head>
+
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+</body>
+
+<script>
+    //Create array by user
+    let num;
+    let array = [];
+    for (let i = 0; i < 10; i++) {
+        num = parseInt(prompt('Enter number ' + (i + 1)));
+        array.push(num);
+    }
+    let v = parseInt(prompt('Enter V'));
+    //loop array to find V
+    for (let i = 0; i < array.length; i++) {
+        if (v === array[i]) {
+            document.getElementById('demo1').innerHTML = array.join(' , ');
+            document.getElementById('demo2').innerHTML = v + ' is in array';
+            break;
+        }
+        else {
+            document.getElementById('demo1').innerHTML = array.join(' , ');
+            document.getElementById('demo2').innerHTML = v + ' is not in array';
+        }
+    }
+</script>
+
+</html>

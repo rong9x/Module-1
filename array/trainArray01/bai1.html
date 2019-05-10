@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bai 01</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    //Create array by user
+    let num;
+    let array = [];
+    let count = 0;
+    for (let i = 0; i < 10; i++) {
+        num = parseInt(prompt('Enter number ' + (i + 1)));
+        array.push(num);
+        if (array[i] >= 10) {
+            count++;
+        }
+    }
+    document.write('Array has ' + count + ' numbers greater than 10');
+</script>
+
+</html>

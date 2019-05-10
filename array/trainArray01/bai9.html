@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bai 09</title>
+</head>
+
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+</body>
+
+<script>
+    //Create array A
+    let num;
+    let lengthAvB = parseInt(prompt('Enter length of array A and B'));
+    let arrayA = [];
+    for (let i = 0; i < lengthAvB; i++) {
+        num = parseInt(prompt('Enter number ' + (i + 1) + ' of array A'));
+        arrayA.push(num);
+    }
+    //Create array B
+    let arrayB = [];
+    for (let i = 0; i < lengthAvB; i++) {
+        num = parseInt(prompt('Enter number ' + (i + 1) + ' of array B'));
+        arrayB.push(num);
+    }
+    //Create array C
+    let arrayC = [];
+    for (let i = 0; i < lengthAvB; i++) {
+        arrayC.push(arrayA[i]);
+    }
+    for (let i = 0; i < lengthAvB; i++) {
+        arrayC.push(arrayB[i]);        
+    }
+    //Display array
+    document.getElementById('demo1').innerHTML = 'Array A: ' + arrayA;
+    document.getElementById('demo2').innerHTML = 'Array B: ' + arrayB;
+    document.getElementById('demo3').innerHTML = 'Array C: ' + arrayC;
+</script>
+
+</html>

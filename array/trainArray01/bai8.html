@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bai 08</title>
+</head>
+
+<body>
+    <p id="demo1"></p>
+    <input type="button" value="Click to sort the descending array" onclick="sortArray()" />
+</body>
+
+<script>
+    //Create array by user
+    let num;
+    let array = [];
+    for (let i = 0; i < 3; i++) {
+        num = parseInt(prompt('Enter number ' + (i + 1)));
+        array.push(num);
+    }
+    //Display array
+    document.getElementById('demo1').innerHTML = array;
+    //Function to sort and display array descending
+    function sortArray() {
+        array.sort(function (a, b) {
+            return b - a;
+        });
+        document.getElementById('demo1').innerHTML = array;
+    }
+</script>
+
+</html>

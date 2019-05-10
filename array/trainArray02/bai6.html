@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bai 06</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let char;
+    let arraylength = parseInt(prompt('Enter length of array'));
+    let array = [];
+    for (i = 1; i <= arraylength; i++) {
+        let char = (prompt('Enter character number ' + i)).toString();
+        array.push(char);
+    }
+    for (var i in array) {
+        if (array[i] === "-") {
+            array[i] = "_";
+        }
+    }
+    document.write(array.join(''));
+</script>
+
+</html>

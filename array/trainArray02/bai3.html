@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bai 03</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let num;
+    let count = 0;
+    let arrayLength = parseInt(prompt('Enter length of array'));
+    let array = [];
+    for (let i = 1; i <= arrayLength; i++) {
+        num = prompt('Enter the ' + i + ' character');
+        array.push(num);
+        if (!isNaN(num)) {
+            count++;
+        }
+    }
+    document.write('Array [' + array.join(' , ') + '] has ' + count + ' numbers');
+</script>
+
+</html>

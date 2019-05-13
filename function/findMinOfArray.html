@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Find Min of Array</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+</body>
+
+<script>
+    let array1 = [3, 5, 1, 8, -3, 7, 8];
+    let array2 = [7, 12, 6, 9, 20, 56, 89];
+    let array3 = [];
+    let array4 = [0, 0, 0, 0, 0, 0];
+    function findMin(array) {
+        let min = array[0];
+        let index = 0;
+        if (array.length === 0) {
+            return -1;
+        }
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                //min = array[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+    document.getElementById("demo").innerHTML = "The smallest element of the array is located at: " + findMin(array3);
+</script>
+
+</html>

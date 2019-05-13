@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check Prime</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let number = parseInt(prompt("Enter a number to check"));
+    function isPrime(number) {
+        let flag = true;
+        if (number < 2) {
+            flag = false;
+        }
+        else if (number === 2) {
+            flag = true;
+        }
+        else if (number % 2 === 0) {
+            flag = false;
+        }
+        else {
+            for (let i = 3; i < (number - 1); i += 2) {
+                if (number % i === 0) {
+                    flag = false;
+                }
+            }
+        }
+        (flag === true) ? alert(number + " is prime") : alert(number + " is not prime");
+    }
+    try {
+        if (isNaN(number) || (number < 0)) {
+            throw new Error("Enter again");
+        }
+        else {
+            isPrime(number);
+        }
+    }
+    catch (e) {
+        console.log(e.name + ': ' + e.message);
+        alert(e.name + ': ' + e.message);
+    }
+</script>
+
+</html>

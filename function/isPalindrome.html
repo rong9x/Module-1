@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>is Palindrome</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let stringToCheck = prompt("Enter a string");
+    function isPalindrome(stringToCheck) {
+        let count = 0;
+        let lengthOfString = stringToCheck.length;
+        for (let i = 0; i < lengthOfString; i++) {
+            if (stringToCheck[i] !== stringToCheck[lengthOfString - 1]) {
+                count++;
+                break;
+            }
+            lengthOfString--;
+        }
+        if (count > 0) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    console.log(isPalindrome(stringToCheck));
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+
+<body>
+    <input type="text" id="demo" />
+    <input type="button" value="click me" onclick="main()" />
+    <p id="result"></p>
+</body>
+
+<script>
+    let array1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let array2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    function search(starName) {
+        for (let i = 0; i < array1.length; i++) {
+            if (starName.toString() === array1[i]) {
+                document.getElementById("result").innerHTML = array2[i];
+                break;
+            }
+            else {
+                document.getElementById("result").innerHTML = "Not found";
+            }
+        }
+    }
+    function main() {
+        let starName = document.getElementById("demo").value;
+        search(starName);
+    }
+</script>
+
+</html>

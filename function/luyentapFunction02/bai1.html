@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+</body>
+
+<script>
+    let number = parseFloat(prompt('Enter a number'));
+    function doSquare(number) {
+        return number**2;
+    }
+    document.getElementById('demo').innerHTML = doSquare(number);
+</script>
+
+</html>

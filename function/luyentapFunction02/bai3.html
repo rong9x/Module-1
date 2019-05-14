@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <p id="demo1"></p>
+</body>
+
+<script>
+    let number = parseInt(prompt('Enter a number'));
+    function factorial(number) {
+        let count = 1;
+        for (let i = 1; i <= number; i++) {
+            count *= i;
+        }
+        return number + "! = " + count;
+    }
+    document.getElementById('demo1').innerHTML = factorial(number);
+</script>
+
+</html>

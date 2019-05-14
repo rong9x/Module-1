@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    function checkArray() {
+        let array = [];
+        let char1 = prompt('Enter character 1');
+        let char2 = prompt('Enter character 2');
+        let char3 = prompt('Enter character 3');
+        array.push(char1, char2, char3);
+        let charToCheck = prompt('Enter character to check');
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (charToCheck.toString() === array[i].toString()) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            return count;
+        }
+        else {
+            count = -1;
+            return count
+        }
+    }
+    console.log(checkArray());
+</script>
+
+</html>

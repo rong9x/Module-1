@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+</body>
+
+<script>
+    let radius = parseFloat(prompt('Enter radius'));
+    function acreage(radius) {
+        return (radius ** 2) * 3.14;
+    }
+    function perimeter(radius) {
+        return radius * 2 * 3.14;
+    }
+    document.getElementById('demo1').innerHTML = "The perimeter is: " + perimeter(radius); + "<br>";
+    document.getElementById('demo2').innerHTML = "The acreage is: " + acreage(radius);
+</script>
+
+</html>

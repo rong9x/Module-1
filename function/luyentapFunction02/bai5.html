@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let num1 = parseInt(prompt("Enter number 1"));
+    let num2 = parseInt(prompt("Enter number 2"));
+    let num3 = parseInt(prompt("Enter number 3"));
+    function findMin(num1, num2, num3) {
+        let min = num1;
+        if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+            alert("Enter again");
+        }
+        else {
+            if (num2 < min) {
+                if (num2 < num3) {
+                    min = num2;
+                }
+                else {
+                    min = num3;
+                }
+            }
+            else if (num3 < min) {
+                if (num3 < num2) {
+                    min = num3;
+                }
+                else {
+                    min = num2;
+                }
+            }
+        }
+        return min;
+    }
+    console.log(findMin(num1, num2, num3));
+</script>
+
+</html>

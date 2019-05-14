@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let number = parseInt(prompt("Enter a number"));
+    function isInteger(number) {
+        if (isNaN(number)) {
+            alert('Enter again');
+        }
+        if (number > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    console.log(isInteger(number));
+</script>
+
+</html>

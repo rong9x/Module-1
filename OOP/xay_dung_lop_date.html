@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Date</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let MyDate = function (day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.getDay = function () {
+            return this.day;
+        }
+        this.getMonth = function () {
+            return this.month;
+        }
+        this.getYear = function () {
+            return this.year;
+        }
+        this.setDay = function (day) {
+            this.day = day;
+        }
+        this.setMonth = function (month) {
+            this.month = month;
+        }
+        this.setYear = function (year) {
+            this.year = year;
+        }
+        this.setDate = function (day, month, year) {
+            this.date = day + '/' + month + '/' + year;
+        }
+        this.getDate = function () {
+            return this.date;
+        }
+    };
+    let date = new MyDate();
+    date.setDate(14, 5, 2019);
+    let a = date.getDate();
+    alert(a.toString());
+</script>
+
+</html>

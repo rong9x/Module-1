@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flash light</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    let Battery = function () {
+        this.setEnergy = function (energy) {
+            this.energy = energy;
+        }
+        this.getEnergy = function (energy) {
+            return this.energy;
+        }
+        this.decreaseEnergy = function () {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        }
+    };
+    let Flashlamp = function () {
+        this.setBattery = function (battery) {
+            this.battery = battery;
+        }
+        this.getBatteryInfo = function () {
+            return this.battery.getEnergy();
+        }
+        this.turnOff = function () {
+            this.status = false;
+        }
+        this.turnOn = function () {
+            this.status = true;
+            battery.decreaseEnergy();
+        }
+        this.light = function () {
+            if (this.status) {
+                alert('lighting');
+            }
+            else {
+                alert('not lighting');
+            }
+        }
+    };
+    let battery = new Battery();
+    battery.setEnergy(10);
+    let flashlamp = new Flashlamp();
+    flashlamp.setBattery(battery);
+    document.write("Battery info: " + flashlamp.getBatteryInfo() + "<br>");
+    flashlamp.light();
+    document.write("Turn on<br/>");
+    flashlamp.turnOn();
+    flashlamp.light();
+    document.write("Battery info: " + flashlamp.getBatteryInfo() + "<br>");
+    document.write("Turn off<br/>");
+    flashlamp.turnOff();
+    flashlamp.light();
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Faking Textarea on Typing</title>
+</head>
+
+<body>
+    <center>
+        <h2>Type anthing slowly</h2>
+        <form name="form">
+            <textarea name="txt" cols="40" rows="5" onkeydown="myFunction()"></textarea>
+        </form>
+    </center>
+</body>
+
+<script>
+    let arr = ["", "B", "o", "o", "t", "c", "a", "m", "p", " ", "P", "r", "e", "p", "a", "r", "a", "t", "i", "o", "n"];
+    let newArr = "";
+    function myFunction() {
+        str = document.form.txt.value;
+        lengthOfStr = str.length;
+        if (lengthOfStr > 0) {
+            for (let i = 1; i <= lengthOfStr; i++) {
+                newArr += arr[i];
+                if (i === arr.length) {
+                    document.form.txt.value = "";
+                    newArr = "";
+                }
+            }
+        }
+        document.form.txt.value = newArr;
+        newArr = "";
+        setTimeout("myFunction()", 1)
+    }
+</script>
+
+</html>

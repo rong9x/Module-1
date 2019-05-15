@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <h1>Tic Tac Toe</h1>
+    <p id="caro"></p>
+</body>
+<script>
+    let display = document.getElementById("caro");
+    let board = [];
+    let data = "";
+    let i, j;
+    for (i = 1; i <= 15; i++) {
+        board[i] = [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".","."];
+    }
+    for (i = 1; i <= 15; i++) {
+        data += "<br>";
+        for (j = 1; j <= 15; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+    }
+    data += "<br/><br/><input type='button' value='Player 1' onclick='player1Turn()'><input type='button' value='Player 2' onclick='player2Turn()'>";
+    display.innerHTML = data;
+    function player1Turn() {
+        let positionX = prompt("position X (1 -> 15): ");
+        let positionY = prompt("position Y (1 -> 15): ");
+        data = "";
+        board[positionY][positionX] = "x";
+        for (let i = 1; i <= 15; i++) {
+            data += "<br/>";
+            for (let j = 1; j <= 15; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        data += "<br/><br/><input type='button' value='Player 1' onclick='player1Turn()'><input type='button' value='Player 2' onclick='player2Turn()'>";
+        display.innerHTML = "<hr/>" + data;
+        for (i = 1; i <= 13; i++) {
+            for (j = 1; j <= 13; j++) {
+                if ((board[i][j] === "x" && board[i][j] === board[i][j + 1] && board[i][j] === board[i][j + 2]) || (board[i][j] === "x" && board[i][j] === board[i + 1][j] && board[i + 1][j] === board[i + 2][j]) || (board[i][j] === "x" && board[i][j] === board[i + 1][j + 1] && board[i][j] === board[i + 2][j + 2])) {
+                    alert("Player 1 win");
+                }
+            }
+        }
+    }
+    function player2Turn() {
+        let positionX = prompt("position X (1 -> 15): ");
+        let positionY = prompt("position Y (1 -> 15): ");
+        data = "";
+        board[positionY][positionX] = "o";
+        for (let i = 1; i <= 15; i++) {
+            data += "<br/>";
+            for (let j = 1; j <= 15; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        data += "<br/><br/><input type='button' value='Player 1' onclick='player1Turn()'><input type='button' value='Player 2' onclick='player2Turn()'>";
+        display.innerHTML = "<hr/>" + data;
+        for (i = 1; i <= 13; i++) {
+            for (j = 1; j <= 13; j++) {
+                if ((board[i][j] === "o" && board[i][j] === board[i][j + 1] && board[i][j] === board[i][j + 2]) || (board[i][j] === "o" && board[i][j] === board[i + 1][j] && board[i + 1][j] === board[i + 2][j]) || (board[i][j] === "o" && board[i][j] === board[i + 1][j + 1] && board[i][j] === board[i + 2][j + 2])) {
+                    alert("Player 2 win");
+                }
+            }
+        }
+    }
+</script>
+
+</html>

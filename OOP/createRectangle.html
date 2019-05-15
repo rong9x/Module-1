@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Rectangle</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="800px" height="500px" style="border:1px solid #d3d3d3;"></canvas><br>
+    <input type="text" id="width" placeholder="Enter width" />&nbsp;&nbsp;<input type="text" id="height"
+        placeholder="Enter height" />&nbsp;<input type="button" value="Change"
+        onclick="changeSizeAndPrintAreaAndPerimeter()" />
+    <p id="result"></p>
+</body>
+
+<script>
+    let Rectangle = function (width, height) {
+        this.width = width;
+        this.height = height;
+        this.getArea = function () {
+            return this.width * this.height;
+        }
+        this.getPerimeter = function () {
+            return (this.width + this.height) * 2;
+        }
+        this.drawRectangle = function () {
+            let ctx = document.getElementById('myCanvas').getContext('2d');
+            ctx.clearRect(0, 0, 800, 500);
+            ctx.fillStyle = 'Coral';
+            ctx.fillRect(0, 0, this.width, this.height);
+        }
+    }
+    let rectangle = new Rectangle(400, 200);
+    function changeSizeAndPrintAreaAndPerimeter() {
+        let newWidth = document.getElementById('width').value;
+        let newHeight = document.getElementById('height').value;
+        rectangle = new Rectangle(parseInt(newWidth), parseInt(newHeight));
+        rectangle.drawRectangle();
+        document.getElementById('result').innerHTML = "Area is: " + rectangle.getArea() + '; Perimeter is: ' + rectangle.getPerimeter();
+    }
+    rectangle.drawRectangle();
+</script>
+
+</html>

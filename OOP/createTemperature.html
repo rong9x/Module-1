@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Temperature</title>
+</head>
+
+<body>
+    <p id="result"></p>
+</body>
+
+<script>
+    let Temperature = function (celcius) {
+        if (celcius > -273) {
+            this.celcius = celcius;
+        }
+        else {
+            alert('Wrong celcius');
+        }
+        this.toFahrenheit = function () {
+            return (this.celcius * 1.8) + 32;
+        }
+        this.toKelvin = function () {
+            return this.celcius + 273.15;
+        }
+    }
+    let celcius = new Temperature(25);
+    document.getElementById('result').innerHTML = "Fahrenheit: " + celcius.toFahrenheit() + "; Kelvin: " + celcius.toKelvin();
+</script>
+
+</html>

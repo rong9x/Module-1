@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Move Objects</title>
+</head>
+
+<body>
+    <div id="game"></div>
+    <script>
+        function Hero(image, top, left, size, speedX, speedY) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+            this.speedX = speedX;
+            this.speedY = speedY;
+
+            this.getHeroElement = function () {
+                return '<img width="' + this.size + '"' +
+                    ' height="' + this.size + '"' +
+                    ' src="' + this.image + '"' +
+                    ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
+            }
+
+            this.moveRight = function (speed) {
+                this.left += this.speedX;
+                //console.log('ok: ' + this.left);
+            }
+            this.moveUp = function (speed) {
+                this.top += this.speedY;
+                //console.log('ok: ' + this.left);
+            }
+        }
+
+        var hero = new Hero('game_move_obj/ironman.jpg', 20, 30, 120, 100, 100);
+
+        function start() {
+            hero.moveRight();
+            if (hero.left + hero.speedX > window.innerWidth - hero.size || hero.left + hero.speedX < 0) {
+                hero.speedX = -hero.speedX;
+            }
+            hero.moveUp();
+            if (hero.top + hero.speedY > window.innerHeight - hero.size || hero.top + hero.speedY < 0) {
+                hero.speedY = -hero.speedY;
+            }
+            document.getElementById('game').innerHTML = hero.getHeroElement();
+            setTimeout(start, 500)
+        }
+
+        start();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Remote Tv</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    function TiVi(_channel, _volume) {
+        this.channel = _channel;
+        if (_volume > 0) {
+            this.volume = _volume;
+        }
+        else {
+            alert("Volume must greater than 0");
+        }
+        this.status = false;
+        this.switchChannel = function () {
+            if (this.status) {
+                console.log("The channel switch to: " + this.channel);
+            }
+            else {
+                console.log("Tv is turn off");
+            }
+        };
+        this.turnOn = function () {
+            if (!this.status) {
+                console.log("Tv is turn on");
+                this.status = true;
+            }
+        }
+        this.turnOff = function () {
+            if (this.status) {
+                console.log("Tv is turn off");
+                this.status = false;
+            }
+        };
+    }
+    function Remote(_code) {
+        this.code = _code;
+        this.setTivi = function (_tivi) {
+            this.tivi = _tivi;
+        };
+        this.increaseVolume = function () {
+            if (this.tivi.status) {
+                if (this.tivi.volume < 100) {
+                    this.tivi.volume++;
+                    console.log("Adjust the volume to :" + this.tivi.volume);
+                }
+            }
+            else {
+                console.log("Tv is turn off");
+            }
+        };
+        this.decreaseVolume = function () {
+            if (this.tivi.status) {
+                if (this.tivi.volume > 0) {
+                    this.tivi.volume--;
+                    console.log("Adjust the volume to :" + this.tivi.volume);
+                }
+            }
+            else {
+                console.log("Tv is turn off");
+            }
+        };
+    }
+    let tivi = new TiVi(1, 90);
+    let remote = new Remote("Model 1102");
+    remote.setTivi(tivi);
+    tivi.turnOn();
+    tivi.channel = 7;
+    tivi.switchChannel();
+    remote.tivi.channel = 3;
+    remote.tivi.switchChannel();
+    remote.increaseVolume();
+    remote.increaseVolume();
+    remote.tivi.turnOff();
+</script>
+
+</html>

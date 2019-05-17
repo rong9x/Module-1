@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Adam - Eva</title>
+</head>
+
+<body>
+    <script>
+        let Apple = function () {
+            this.appleWeight = 10;
+            this.getAppleWeight = function () {
+                return this.appleWeight;
+            };
+            this.decreaseAppleWeight = function () {
+                if (this.appleWeight > 0) {
+                    this.appleWeight--;
+                };
+            }
+        };
+        let Human = function (_name, _gender, _weight, _word) {
+            this.name = _name;
+            this.gender = _gender;
+            this.weight = _weight;
+            this.word = _word;
+            this.getName = function () {
+                return this.name;
+            };
+            this.getGender = function () {
+                if (this.gender === "Male") {
+                    return "Male";
+                }
+                if (this.gender === "Female") {
+                    return "Female";
+                }
+                else return "Undefined";
+            };
+            this.getWeight = function () {
+                return this.name + ' weight: ' + this.weight;
+            };
+            this.say = function () {
+                return (this.name + ' say: ' + this.word);
+            };
+            this.setApple = function (_apple) {
+                this.apple = _apple;
+            }
+            this.checkApple = function () {
+                return "Apple weight: " + this.apple.getAppleWeight();
+            };
+            this.eat = function () {
+                if (this.apple.appleWeight > 0) {
+                    this.weight++;
+                    this.apple.decreaseAppleWeight();
+                    return this.name + " Eat Apple";
+                }
+                else {
+                    return "Empty";
+                }
+            };
+        };
+        let apple = new Apple();
+        let adam = new Human("Adam", "Male", 60, "Hello, i am Adam");
+        let eva = new Human("Eva", "Female", 50, "Hello, i am Eva");
+        adam.setApple(apple);
+        eva.setApple(apple);
+        //Introduce Adam
+        console.log(adam.getName());
+        console.log(adam.getGender());
+        console.log(adam.getWeight());
+        console.log(adam.say());
+        console.log(' ');
+        //Introduce Eva
+        console.log(eva.getName());
+        console.log(eva.getGender());
+        console.log(eva.getWeight());
+        console.log(eva.say());
+        console.log(' ');
+        //Eat apple
+        for (let i = 0; i < 6; i++) {
+            console.log(adam.eat());
+            console.log(adam.checkApple());
+            console.log(adam.getWeight());
+            console.log(' ');
+            console.log(eva.eat());
+            console.log(eva.checkApple());
+            console.log(eva.getWeight());
+            console.log(' ');
+        }
+    </script>
+</body>
+
+</html>

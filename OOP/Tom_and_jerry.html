@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tom and Jerry</title>
+</head>
+
+<body>
+    <div id="container" style="text-align: center">
+        <img src="tom_n_jerry/tom.png" />&nbsp;&nbsp;&nbsp;<img src="tom_n_jerry/jerry.jpeg"
+            style="width: 180px" /><br><br>
+        <input type="button" value="Cat Speak" onclick="tom.speak();" />&nbsp;&nbsp;&nbsp;
+        <input type="button" value="Mouse Speak" onclick="jerry.speak();" />&nbsp;&nbsp;&nbsp;
+        <input type="button" value="Catch" onclick="tom.catchRat();" />&nbsp;&nbsp;&nbsp;
+        <input type="button" value="Eat" onclick="tom.eatRat();" />
+        <p id="result"></p>
+        <p id="result1"></p>
+    </div>
+</body>
+
+<script>
+    function Rat(_name, _weight, _speed) {
+        this.name = _name;
+        this.weight = _weight;
+        this.speed = _speed;
+        this.isAlive = true;
+        this.speak = function () {
+            document.getElementById("result").innerHTML = "chít, chít";
+        }
+    }
+    function Cat(_name, _weight, _speed) {
+        this.name = _name;
+        this.weight = _weight;
+        this.speed = _speed;
+        this.speak = function () {
+            document.getElementById("result").innerHTML = "meo meo";
+        }
+        this.setRat = function (_rat) {
+            this.rat = _rat;
+        }
+        this.catchRat = function () {
+            if (this.speed > this.rat.speed) {
+                document.getElementById("result").innerHTML = this.name + " catched " + this.rat.name;
+                this.speed = 0;
+            }
+        }
+        this.eatRat = function () {
+            if (this.rat.isAlive) {
+                this.rat.isAlive = false;
+                this.weight += parseInt(this.rat.weight);
+                document.getElementById("result1").innerHTML = this.name + " eat " + this.rat.name + '<br>' + "Weight of " + this.name + " is: " + this.weight;
+            }
+        }
+    }
+    let jerry = new Rat("Jerry", 10, 10);
+    let tom = new Cat("Tom", 15, 20);
+    tom.setRat(jerry);
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SwitchButton_ElectricLamp</title>
+</head>
+
+<body>
+    <script>
+        function ElectricLamp(_status) {
+            this.status = _status;
+            this.turnOff = function () {
+                document.write("Off <br>");
+                this.status = false;
+            }
+            this.turnOn = function () {
+                document.write("On <br>");
+                this.status = true;
+            }
+        }
+        function SwitchButton() {
+            this.connectToLamp = function(_lamp) {
+                this.lamp = _lamp;
+            }
+            this.switchOn = function() {
+                if (!this.lamp.status) {
+                    this.lamp.turnOn();
+                    document.write("Lighting <br>");
+                }
+            }
+            this.switchOff = function() {
+                if (this.lamp.status) {
+                    this.lamp.turnOff();
+                    document.write("Not Lighting <br>");
+                }
+            }
+        }
+        let electricLamp = new ElectricLamp(false);
+        let switchButton = new SwitchButton();
+        switchButton.connectToLamp(electricLamp);
+        for (let i = 0; i < 5; i++) {
+            switchButton.switchOn();
+            switchButton.switchOff();    
+        }
+    </script>
+</body>
+
+</html>

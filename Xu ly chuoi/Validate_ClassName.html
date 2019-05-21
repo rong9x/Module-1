@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validate Class Name</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    function isValidateClassName(str) {
+        let regexp = /^[CAP][0-9]{4}[GHIKLM]$/;
+        (regexp.test(str)) ? console.log(str + " is a validate class name") : console.log(str + " is an unvalidate class name");
+    }
+    let arrayOfClassName = ["C0318G", "C0419h1", "M0318G", "P0323A"];
+    for (let i = 0; i < arrayOfClassName.length; i++) {
+        isValidateClassName(arrayOfClassName[i]);
+    }
+</script>
+
+</html>

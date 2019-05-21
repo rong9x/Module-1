@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validate email</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    function isValidateEmail(str) {
+        let regexp = /^[A-Za-z0-9]{1,}[@][A-Za-z0-9]{3,}[.][A-Za-z0-9]{2,}$/;
+        (regexp.test(str)) ? console.log(str + " is a validate email") : console.log(str + " is an unvalidate email");
+    }
+    let arrayOfEmail = ["a@gmail.com", "ab@yahoo.com", "abc@hotmail.com", "@gmail.com", "ab@gmail.", "@#abc@gmail.com"];
+    for (let i = 0; i < arrayOfEmail.length; i++) {
+        isValidateEmail(arrayOfEmail[i]);
+    }
+</script>
+
+</html>

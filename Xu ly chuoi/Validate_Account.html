@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validate account</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    function isValidateAccount(str) {
+        let regexp = /^[_a-z0-9]{6,}$/;
+        (regexp.test(str)) ? console.log(str + " is a validate account") : console.log(str + " is an unvalidate account");
+    }
+    let arrayOfAccount = ["123abc_", "_abc123", "______", "123456", "abcdefg", ".@", "12345", "1234_", "abcde "];
+    for (let i = 0; i < arrayOfAccount.length; i++) {
+        isValidateAccount(arrayOfAccount[i]);
+    }
+</script>
+
+</html>

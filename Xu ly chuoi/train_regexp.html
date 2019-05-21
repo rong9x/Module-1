@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Train Regexp</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    function isValidateDay(str) {
+        let regexp = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/;
+        //let regexp = /[03]\d\/[01]\d\/[\d]{4}/;
+        (regexp.test(str)) ? console.log(str + " is a validate day") : console.log(str + " is an unvalidate day");
+    }
+    function countWordInString(str) {
+        str = str.replace(/(^\s*)|(\s*$)/gi, "");//exclude start and end white-space
+        str = str.replace(/[ ]{2,}/gi, " ");//convert 2 or more spaces to 1  
+        str = str.replace(/\n /, "\n");//exclude newline with a start spacing  
+        return str + " has " + str.split(' ').length + " words";//convert string to array base on 'space' and return length of array
+    }
+    function countVowelAndConsonant(str) {
+        let regexp = /[a|e|i|o|u]/i;
+        let arrayOfVowel = [];
+        let arrayOfConsonant = [];
+        for (let i = 0; i < str.length; i++) {
+            (regexp.test(str[i])) ? arrayOfVowel.push(str[i]) : arrayOfConsonant.push(str[i]);
+        }
+        return str + " has " + arrayOfVowel.length + " vowel and " + arrayOfConsonant.length + " consonant";
+    }
+    function checkPassCode(str) {
+        let regexp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+        (regexp.test(str)) ? console.log(str + " is a validate passcode") : console.log(str + " is an unvalidate passcode");
+    }
+    //Testing
+    let arrayOfDay = ["06/09/1992", "31/2/1992"];
+    for (let i = 0; i < arrayOfDay.length; i++) {
+        isValidateDay(arrayOfDay[i]);
+    }
+    console.log('');
+    let name = "Nguyen Vu Ho Hai";
+    console.log(countWordInString(name));
+    console.log('');
+    let str = "a1e2i3o4u5";
+    console.log(countVowelAndConsonant(str.trim()));
+    console.log('');
+    let arrayOfPassCode = ["Rong2345678", "Ro23456", "$Rong2345678"];
+    for (let i = 0; i < arrayOfPassCode.length; i++) {
+        checkPassCode(arrayOfPassCode[i]);
+    }
+</script>
+
+</html>

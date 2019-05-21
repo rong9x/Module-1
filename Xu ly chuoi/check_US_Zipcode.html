@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check US Zipcode</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    function isUSZipCode(str) {
+        let regexp = /^[0-9]{5}(?:-[0-9]{4})?$/;
+        if (regexp.test(str)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    function isUSZipCode2(str) {
+        let regexp = /^((\d{5}-\d{4})|(\d{5})|([A-Z]\d[A-Z]\s\d[A-Z]\d))$/;
+        if (regexp.test(str)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    let zipcode = "03201 - 2150";
+    console.log(isUSZipCode(zipcode));
+    let zipcode2 = "7892";
+    console.log(isUSZipCode(zipcode2));
+    console.log(isUSZipCode2(zipcode));
+    console.log(isUSZipCode2(zipcode2));
+    let zipCodeNewYorkCity = "10275";
+    console.log(isUSZipCode(zipCodeNewYorkCity));
+    console.log(isUSZipCode2(zipCodeNewYorkCity));
+</script>
+
+</html>

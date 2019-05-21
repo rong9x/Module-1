@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validate email</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    function isValidatePhoneNumber(str) {
+        let regexp = /[^A-Za-z]{2}-[0][^A-Za-z]{9}$/;
+        (regexp.test(str)) ? console.log(str + " is a validate phone number") : console.log(str + " is an unvalidate phone number");
+    }
+    let arrayOfPhoneNumber = ["84-0978489648", "a8-22222222"];
+    for (let i = 0; i < arrayOfPhoneNumber.length; i++) {
+        isValidatePhoneNumber(arrayOfPhoneNumber[i]);
+    }
+</script>
+
+</html>

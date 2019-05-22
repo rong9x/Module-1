@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Management</title>
+</head>
+
+<body onload="showList()">
+    <div>
+        <h1>Display all products</h1>
+        <p id="result"></p>
+        <h1>Add a product to list</h1>
+        <input type="text" id="txtAdd" placeholder="New product" />&nbsp;&nbsp;<input type="button" value="Add"
+            onclick="addProducts()" />
+        <h1>Edit products</h1>
+        <input type="text" placeholder="Enter a name to update" id="txtEdit" />
+    </div>
+</body>
+
+<script>
+    let arrayOfProducts = ['Product A', 'Product B', 'Product C'];
+
+    function showList() {
+        let list;
+        list = "<table border='1' width='400' cellspacing='0' cellpadding='3'>";
+        for (let i = 0; i < arrayOfProducts.length; i++) {
+            list += "<tr><td>" + i + "</td><td width='250'>" + arrayOfProducts[i] + "</td><td width='50'><input type='button' value='Edit' onclick='editProduct(" + i + ")'/></td><td width='50'><input type='button' value='Delete' onclick='delProduct(" + i + ")'/></td></tr>";
+        }
+        list += "</table>";
+        document.getElementById('result').innerHTML = list;
+    }
+
+    function addProducts() {
+        let newProduct = document.getElementById('txtAdd').value;
+        if (newProduct === "") {
+            alert("Please enter name of product");
+        }
+        else {
+            arrayOfProducts.push(newProduct);
+            document.getElementById('txtAdd').value = "";
+            showList();
+            alert('Product added');
+        }
+    }
+
+    function editProduct(i) {
+        let updateProduct = document.getElementById('txtEdit').value;
+        if (updateProduct === "") {
+            alert("Please enter name of product");
+        }
+        else {
+            arrayOfProducts[i] = updateProduct;
+            showList();
+            alert('Product updated');
+        }
+    }
+
+    function delProduct(i) {
+        arrayOfProducts.splice(i, 1);
+        showList();
+        alert('Product deleted');
+    }
+</script>
+
+</html>

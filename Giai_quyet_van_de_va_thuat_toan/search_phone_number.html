@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search phone numbers</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let arrayOfPhoneNumbers = ["0965855707", "0968833440","0984202057","2182492825", "2582292825","88844435", "222552482343", "098420205723"];
+    let newArray = [];
+    //Giả sử số điện thoại của mạng Viettel bao gồm 10 chữ số và bắt đầu bằng 096 hoặc 098
+    let regexp = /^[0][9][68][0-9]{7,7}$/;
+    for (let i = 0; i < arrayOfPhoneNumbers.length; i++) {
+        if (regexp.test(arrayOfPhoneNumbers[i])) {
+            newArray.push(arrayOfPhoneNumbers[i]);
+        }
+    }
+    document.write("List of phone number: " + arrayOfPhoneNumbers.join(' , ') + '<br>');
+    document.write("Viettel phone number is: " + newArray.join(' , '));
+</script>
+
+</html>

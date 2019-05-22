@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Find Min Max</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let numbers = [];
+    function createArray(numbers) {
+        for (let i = 0; i < 10; i++) {
+            numbers[i] = Math.floor(Math.random() * 101);
+        }
+        return numbers.join(' , ');
+    }
+    function findMin(numbers) {
+        let min = numbers[0];
+        for (let i = 1; i < numbers.length; i++) {
+            if (min > numbers[i]) {
+                min = numbers[i];
+            }
+        }
+        return min;
+    }
+    function findMax(numbers) {
+        let max = numbers[0];
+        for (let i = 1; i < numbers.length; i++) {
+            if (max < numbers[i]) {
+                max = numbers[i];
+            }
+        }
+        return max;
+    }
+    document.write(createArray(numbers) + '<br>');
+    document.write('Min: ' + findMin(numbers) + '<br>');
+    document.write('Max: ' + findMax(numbers));
+
+</script>
+
+</html>

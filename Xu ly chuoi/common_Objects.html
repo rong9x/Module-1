@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Common objects</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let myDate = new Date(1992, 09, 06, 18, 0, 0, 0);
+    let currentDate = new Date();
+    let yearsLived = currentDate.getFullYear() - myDate.getFullYear();
+    let monthsLived = yearsLived * 12;
+    let daysLived = yearsLived * 365;
+    let hoursLived = daysLived * 24;
+    let minutesLived = hoursLived * 60;
+    let secondsLived = minutesLived * 60;
+    console.log("Date object");
+    console.log("I have lived " + yearsLived + " years");
+    console.log("I have lived " + monthsLived + " months");
+    console.log("I have lived " + daysLived + " days");
+    console.log("I have lived " + hoursLived + " hours");
+    console.log("I have lived " + minutesLived + " minutes");
+    console.log("I have lived " + secondsLived + " seconds");
+    console.log('');
+    console.log("Math object");
+    console.log("Random from 0 to 10: " + Math.floor(Math.random() * 10));
+    console.log("Random from 0 to 400: " + Math.floor(Math.random() * 400));
+    console.log("Random from 50 to 100: " + (Math.floor(Math.random() * (100 - 50)) + 50));
+    console.log("Min of (5, 7, 2, 9): " + Math.min(5, 7, 2, 9));
+    console.log("Max of (5, 7, 2, 9): " + Math.max(5, 7, 2, 9));
+    console.log("Pow of 53 " + Math.pow(7.280109889280518, 2));
+    area = Math.pow(5, 2) * Math.PI;
+    console.log("Circle area with 5 radius is: " + Math.round(area));
+    console.log('');
+    console.log("String object");
+    function countA(str) {
+        let regexp = /[a]/gi;
+        let result = [];
+        for (let i = 0; i < str.length; i++) {
+            if (regexp.test(str[i])) {
+                result.push(str[i]);
+            }
+        }
+        return result.length;
+    }
+    function splitString(str) {
+        str = str.replace(/[ ]{2,}/gi, " ");//convert 2 or more spaces to 1 
+        return str.split(' ');
+    }
+    function replaceString(str) {
+        str = str.replace(/Javascript/i, "Typescript");
+        return str;
+    }
+    let str = "Tôi yêu ngôn ngữ lập trình Javascript";
+    console.log(str + " has " + countA(str) + " character 'a'");
+    console.log(splitString(str));
+    console.log(str + " has "+ splitString(str).length + " words");
+    console.log(replaceString(str));
+</script>
+
+</html>

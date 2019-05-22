@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guess numbers</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let numbers = [];
+
+    function createArray(numbers) {
+        for (let i = 1; i <= 100; i++) {
+            numbers.push(i);
+        }
+        return numbers;
+    }
+
+    createArray(numbers);
+
+    function guessNumbers(numbers) {
+        let randomNumber = Math.floor(Math.random() * numbers[numbers.length - 1]) + numbers[0];
+        let count = 1;
+        do {
+            let numberGuessed = parseInt(prompt("Guess a number from 1 to 100 (" + count + ")"));
+            if (isNaN(numberGuessed)) {
+                alert("Not a number");
+            }
+            else if (numberGuessed === randomNumber) {
+                alert("Bingo! " + "Correct number is: " + numberGuessed);
+                break;
+            }
+            else if (numberGuessed < randomNumber) {
+                alert("Your number: " + numberGuessed + " - too low");
+                count++;
+            }
+            else {
+                alert("Your number: " + numberGuessed + " - too high");
+                count++;
+            }
+        }
+        while (count <= 5);
+    }
+
+    guessNumbers(numbers);
+</script>
+
+</html>

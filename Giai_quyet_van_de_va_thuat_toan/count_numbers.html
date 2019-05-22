@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Count numbers</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let numbers = [];
+    function createArray(numbers) {
+        for (let i = 0; i < 100; i++) {
+            numbers[i] = Math.floor(Math.random() * 101);
+        }
+        return numbers.join(' , ');
+    }
+    document.write(createArray(numbers) + '<br>');
+    function countNumbers(numbers) {
+        let numb = parseInt(prompt('Enter a number'));
+        let count = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            if (numb === numbers[i]) {
+                count++;
+            }
+        }
+        return numb + " appears " + count + " times";
+    }
+    document.write(countNumbers(numbers));
+
+</script>
+
+</html>

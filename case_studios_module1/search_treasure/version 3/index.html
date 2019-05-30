@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Find treasure</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        canvas {
+            border: 1px solid #d3d3d3;
+        }
+    </style>
+</head>
+
+<body onload="startGame()">
+    <div>Điều kiển chim vượt các chướng ngại vật, ăn các đồng xu để tăng điểm.<br>Khi điểm vượt qua các mốc 5 và 10 thì tốc độ sẽ tăng lên. Bạn cũng có thể nhấn nút CTRL để tăng tốc cho con chim non ^_^</div>
+    <br><div id="score">Score: 0</div>
+    <br><input type="button" value="Play" onclick="reset()">
+    <script src="search_treasure_v3.js"></script>
+</body>
+
+</html>
